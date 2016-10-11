@@ -37,5 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
             break;
         }
     }
-    completioncheck();
+    var x = document.getElementById("end");
+    x.addEventListener("mouseover", function () { completioncheck(); });
 });
