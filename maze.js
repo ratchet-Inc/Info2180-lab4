@@ -6,13 +6,17 @@
 var startValue = 0;
 
 ////////////////////////// function declarations
+function addFailClass(obj) {
+    obj.className += " youlose";
+}
+
 function addWallListneers(obj) {
     console.log(obj.length);
     for (var i = 0; i < obj.length - 1; i++) {
         console.log(i);
         obj[i].addEventListener("mouseover", function () {
             if (startValue == 1) {
-                this.className += " youlose";
+                addFailClass(obj[i]);
             }
             completionCheck();
         });
@@ -61,6 +65,12 @@ function addAntiCheat(){
         if(startValue == 1 && event.clientX < (X - limit))
         {
             console.log("Cheating Caught");
+            var lst = document.querySelectorAll(".boundary");
+            for (var i = 0; i < lst.length - 1; i++){
+                addFailClass(lst[i]);
+            }
+            completionCheck();
+            changeStatus("CHEATING CAUGHT! Automatic Lose.");
         }
     });
 }
