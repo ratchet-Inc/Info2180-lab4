@@ -2,24 +2,40 @@
 
 console.log("test");
 
+//////////////////////////// global variables
+
+var startedSignal = 0;
+
+////////////////////////////////////////////////
+
+//////////////////////////// function declarations
 var addFailureClass = function (obj) {
     obj.className += " youlose";
 };
 
 var completioncheck = function () {
-    var lst = document.querySelectorAll(".youlose");
-    console.log("list length: " + lst.length);
-    var checker = undefined;
-    for(var i = 0; i < lst.length; i++)
+    if(startedSignal == 1)
     {
-        checker = lst[i].className;
-        console.log("checker value["+i+"]: " + checker);
-        if(checker == "boundary youlose")
-        {
-            console.log("boundary matched.");
+        var lst = document.querySelectorAll(".youlose");
+        console.log("list length: " + lst.length);
+        if (lst.length > 0) {
+            console.log("challenge failed.");
         }
     }
 };
+
+var restartMaze = function () {
+    restartMaze = 1;
+    var lst = document.querySelectorAll(".boundry");
+    if(lst.length != 0)
+    {
+        for(var i = 0; i < (lst.length - 1); i++)
+        {
+            lst[i].className = "boundry";
+        }
+    }
+};
+//////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("here");
