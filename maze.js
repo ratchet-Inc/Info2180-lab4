@@ -4,6 +4,9 @@
 
 ///////////////////////// global variable
 var startValue = 0;
+var boundaryList = undefined;
+var loopLimit = undefined;
+//////////////////////////////////////////////
 
 ////////////////////////// function declarations
 function addFailClass(obj) {
@@ -11,8 +14,8 @@ function addFailClass(obj) {
 }
 
 function addWallListneers(obj) {
-    console.log(obj.length);
-    for (var i = 0; i < obj.length - 1; i++) {
+    console.log(loopLimit);
+    for (var i = 0; i < loopLimit; i++) {
         console.log(i);
         obj[i].addEventListener("mouseover", function () {
             if (startValue == 1) {
@@ -65,25 +68,26 @@ function addAntiCheat(){
         if(startValue == 1 && event.clientX < (X - limit))
         {
             console.log("Cheating Caught");
-            var lst = document.querySelectorAll(".boundary");
-            for (var i = 0; i < lst.length - 1; i++){
-                addFailClass(lst[i]);
+            for (var i = 0; i < loopLimit; i++){
+                addFailClass(boundaryList[i]);
             }
             completionCheck();
             changeStatus("CHEATING CAUGHT! Automatic Lose.");
         }
     });
 }
+//////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////// main execution
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Page loaded.");
+    console.log("Page loaded.(efficency version)");
     /*document.getElementById("boundary1").addEventListener("mouseover", function () {
         this.className += " youlose";
     });*/
     changeStatus("CLICK the \'S\' button to start playing.");
-    var myLst = document.querySelectorAll(".boundary");
-    addWallListneers(myLst);
+    boundaryList = document.querySelectorAll(".boundary");
+    loopLimit = boundaryList.length - 1;
+    addWallListneers(boundaryList);
     document.getElementById("start").addEventListener("click", function () { restartMaze(); });
     document.getElementById("end").addEventListener("mouseover", completionCheck);
 });
