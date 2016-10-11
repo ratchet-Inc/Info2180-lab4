@@ -1,7 +1,11 @@
 // JavaScript source code
+/////////////////// enables strict mode
+"use struct";
 
+///////////////////////// global variable
 var startValue = 0;
 
+////////////////////////// function declarations
 function addWallListneers(obj) {
     console.log(obj.length);
     for (var i = 0; i < obj.length - 1; i++) {
@@ -25,6 +29,7 @@ function restartMaze() {
             lst[i].className = "boundary";
         }
     }
+    addAntiCheat();
     changeStatus("Now Playing, GOOD LUCK!!");
 }
 
@@ -47,6 +52,20 @@ function changeStatus(newText) {
     document.getElementById("status").textContent = newText;
 }
 
+function addAntiCheat(){
+    var X = event.clientX;
+    var Y = event.clientY;
+    var limit = document.getElementById("start").offsetWidth;
+    console.log("coord X: " + X + " coord Y: " + Y + " start block left offset value: " + limit);
+    document.addEventListener("mousemove", function () {
+        if(startValue == 1 && event.clientX < (X - limit))
+        {
+            console.log("Cheating Caught");
+        }
+    });
+}
+
+//////////////////////////// main execution
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Page loaded.");
     /*document.getElementById("boundary1").addEventListener("mouseover", function () {
