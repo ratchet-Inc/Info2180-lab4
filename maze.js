@@ -16,7 +16,7 @@ function addWallListneers(obj) {
         console.log(i);
         obj[i].addEventListener("mouseover", function () {
             if (startValue == 1) {
-                addFailClass(obj[i]);
+                addFailClass(this);
             }
             completionCheck();
         });
