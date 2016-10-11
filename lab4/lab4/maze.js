@@ -13,7 +13,7 @@ var addFailureClass = function (obj) {
     obj.className += " youlose";
 };
 
-var addFailListeners = function () {
+function addFailListeners() {
     var lst = document.querySelectorAll(".boundary");
     console.log("length check: " + lst.length);
     for (var i = 0; i < lst.length - 1; i++) {
@@ -35,7 +35,7 @@ function completioncheck() {
 }
 
 function restartMaze() {
-    restartMaze = 1;
+    startedSignal = 1;
     var lst = document.querySelectorAll(".youlose");
     console.log("restartMaze list lenght: " + lst.length);
     if(lst.length > 0)
@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     restartMaze();*/
+    addFailListeners();
     var startingClick = document.getElementById("start");
     startingClick.addEventListener("click", function () { restartMaze(); });
-    addFailListeners();
     //console.log("variable data check: " + walls[0]);
     var endingPosition = document.getElementById("end");
     endingPosition.addEventListener("mouseover", function () { completioncheck(); });
