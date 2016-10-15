@@ -62,10 +62,10 @@ function changeStatus(newText) {
 function addAntiCheat(){
     var X = event.clientX;
     var Y = event.clientY;
-    var limit = document.getElementById("start").offsetWidth;
+    var limit = document.getElementById("maze").offsetLeft;
     console.log("coord X: " + X + " coord Y: " + Y + " start block left offset value: " + limit);
     document.addEventListener("mousemove", function () {
-        if(startValue == 1 && event.clientX < (X - limit))
+        if(startValue == 1 && event.clientX <= limit)
         {
             console.log("Cheating Caught");
             for (var i = 0; i < loopLimit; i++){
