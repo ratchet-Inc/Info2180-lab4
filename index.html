@@ -1,40 +1,142 @@
-<!DOCTYPE html>
-<html><!--
-original lab idea and code by Kevin Wallace and Jeff Prouty; revised by Brian Le, Victoria Kirst, and Marty Stepp
-http://www.webstepbook.com/
-You should download this file for your lab, but you should not edit its contents.
---><head>
-		<meta charset="utf-8">
-		<title>Maze!</title>
-		<link href="maze.css" type="text/css" rel="stylesheet">
-		<script src="maze.js" type="text/javascript"></script>
-	</head>
+﻿<!DOCTYPE html>
+<html lang="en">
 
-	<body>
-		<h1>The Amazing Mouse Maze!</h1>
-		<h2 id="status">Move your mouse over the "S" to begin.</h2>
+<head>
 
-		<!-- This part of the page represents the maze -->
-		<div id="maze">
-			<div id="start">S</div>
-			<div class="boundary" id="boundary1"></div>
-			<div class="boundary"></div>
-			<div class="boundary"></div>
-			<div class="boundary"></div>
-			<div class="boundary"></div>
-			<div id="end">E</div>
-		</div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="System overview">
+  <meta name="author" content="UWI Capstone Group 8, 2019">
 
-		<p>
-			The object of this game is to guide the mouse cursor through the start area and get to the end area.  Be sure to avoid the walls:
-		</p>
+  <title>The Reko Engine - Home</title>
 
-		<div class="boundary example"></div>
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-		<p>
-			Good luck!
-		</p>
+  <!-- Custom fonts for this template -->
+  <link href="css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
 
-	</body>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">The Reko Engine</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <!-- <header class="masthead" style="background-image: url('img/home-bg.jpg')"> -->
+    <header class="masthead" style="background-image: url('https://www.hdwallpaper.nu/wp-content/uploads/2016/07/toy_story_wallpaper29992.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <span class="subheading">A personalized</span>
+                        <h1>Movie Recommendation</h1>
+                        <span class="subheading">system</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <br />
+                <div class="post-preview">
+                    <a href="postAim.html">
+                        <h2 class="post-title">
+                            Personalized movie recommendations?
+                        </h2>
+                        <h3 class="post-subtitle">
+                            The aim of the system.
+                        </h3>
+                    </a>
+                    <br />
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="postHow.html">
+                        <h2 class="post-title">
+                            How does the system work?
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Lets take a detour. ^_^
+                        </h3>
+                    </a>
+                    <br />
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="postResult.html">
+                        <h2 class="post-title">
+                            What are the results of the project?
+                        </h2>
+                        <h3 class="post-subtitle">
+                            well, is it what you expact.
+                        </h3>
+                    </a>
+                    <br />
+                </div>
+                <hr>
+                <!-- Pager -->
+                <div class="clearfix">
+                    <a class="btn btn-primary float-right" href="#">Return to top &uarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://github.com/ratchet-Inc/GradProj">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; The Reko Engine, 2019</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+</body>
+
 </html>
